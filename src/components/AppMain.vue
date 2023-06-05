@@ -15,18 +15,23 @@ export default {
             <option value="Alien" selected>Alien</option>
             </select>
 
+            <div class="cards-container">
+
+                <div class="el-found">
+                    <strong>Found 39 cards</strong>
+                </div>
+    
+            </div>
+
         </div>
 
-        <div class="cards-container">
-
-        </div>
 
     </main>
 
 </template>
 
 <style  lang="scss">
-    .main{
+    .cover{
         background-color: #d48f38;
         height: calc(100vh - 100px);
 
@@ -38,13 +43,26 @@ export default {
             width: 200px;
             margin: 25px;
         }
+
+        .cards-container{
+            width: 80%;
+            height: calc(100% - 100px);
+            margin: auto;
+            background-color: white;
+            padding: 50px;
+
+            .el-found{
+                background-color: #212529;
+                color: white;
+                width: 100%;
+                height: 70px;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                padding-left:10px ;
+            }
+        }
     }
 
-    .cards-container{
-        width: 80%;
-        height: 100%;
-        margin: auto;
-        background-color: white;
-    }
 
 </style>
