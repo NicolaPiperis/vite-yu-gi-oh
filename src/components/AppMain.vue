@@ -1,6 +1,16 @@
 <script>
+import { store } from './../store.js';
+import singleCard from './singleCard.vue';
 export default {
-    name : "AppMain"
+    name : "AppMain",
+    components : {
+        singleCard
+    },
+    data() {
+        return{
+            store
+        }
+    }
 
 }
 </script>
@@ -20,6 +30,8 @@ export default {
                 <div class="el-found">
                     <strong>Found 39 cards</strong>
                 </div>
+
+                <singleCard />
     
             </div>
 
@@ -61,6 +73,8 @@ export default {
                 align-items: center;
                 padding-left:10px ;
             }
+
+            
         }
     }
 
