@@ -17,9 +17,9 @@ export default {
         getCards () {
             axios.get(store.apiURL)
             .then(res => {
-                store.cardList = res.data.card_images;
+                store.cardList = res.data.data;
             })
-            .catch(err =>{
+            .catch(err => {
                 console.log(err);
             })
         }
@@ -34,6 +34,8 @@ export default {
     <AppHeader msg="Yu-Gi-Oh Api" />
 
     <AppMain />
+
+    
 </template>
 
 <style lang="scss">

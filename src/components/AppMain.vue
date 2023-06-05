@@ -31,7 +31,9 @@ export default {
                     <strong>Found 39 cards</strong>
                 </div>
 
-                <singleCard />
+                <div class="riga">
+                    <singleCard v-for="card in store.cardList" :details="card"/>
+                </div>
     
             </div>
 
