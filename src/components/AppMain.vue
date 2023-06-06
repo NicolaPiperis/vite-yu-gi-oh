@@ -21,10 +21,12 @@ export default {
 
         <div class="cover">
 
-            <select class="dropdown" v-model="store.selectArchetype">
+            <select class="dropdown" v-model.trim="store.selectArchetype">
             <option :value="store.selectArchetype" selected>{{ store.selectArchetype }}</option>
             <option v-for="(archetype, index) in store.archetypesList" :key="index" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
             </select>
+
+            <button @click.prevent="$emit('mysearch')">Cerca</button>
 
             <div class="cards-container">
 

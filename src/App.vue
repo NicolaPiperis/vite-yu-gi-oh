@@ -15,6 +15,12 @@ export default {
     },
     methods : {
         getCards () {
+            let myurl = store.apiURL;
+
+            if(store.selectArchetype !== "") {
+                myurl += `?${store.apiArchetypeParameter}=${store.selectArchetype}`
+            }
+
             axios.get(store.apiURL)
             .then(res => {
                 store.cardList = res.data.data;
@@ -40,7 +46,7 @@ export default {
 <template>
     <AppHeader msg="Yu-Gi-Oh Api" />
 
-    <AppMain />
+    <AppMain @mysearch="getCards" />
 
     
 </template>
