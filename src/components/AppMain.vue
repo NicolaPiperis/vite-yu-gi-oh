@@ -21,18 +21,19 @@ export default {
 
         <div class="cover">
 
-            <select class="dropdown">
-            <option value="Alien" selected>Alien</option>
+            <select class="dropdown" v-model="store.selectArchetype">
+            <option :value="store.selectArchetype" selected>{{ store.selectArchetype }}</option>
+            <option v-for="(archetype, index) in store.archetypesList" :key="index" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
             </select>
 
             <div class="cards-container">
 
                 <div class="el-found">
-                    <strong>Found 39 cards</strong>
+                    <strong>Found {{ store.cardList.length }} cards</strong>
                 </div>
 
                 <div class="riga">
-                    <singleCard v-for="card in store.cardList" :details="card"/>
+                    <singleCard v-for="card in store.cardList" :key="card.id" :details="card"/>
                 </div>
     
             </div>
@@ -63,7 +64,8 @@ export default {
             height: calc(100% - 100px);
             margin: auto;
             background-color: white;
-            padding: 50px;
+            padding: 50px 25px;
+            overflow: auto;
 
             .el-found{
                 background-color: #212529;
@@ -76,7 +78,10 @@ export default {
                 padding-left:10px ;
             }
 
-            
+            .riga{
+                display: flex;
+                flex-wrap: wrap;
+            }
         }
     }
 
